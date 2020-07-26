@@ -28,9 +28,9 @@ const Home = () => {
 
         const onSubmit = event => {
             event.preventDefault();
-            unirest.get(process.env.RAPID_API_URL)
+            unirest.get("https://community-open-weather-map.p.rapidapi.com/weather")
             .header({"access-control-request-headers" : true})
-            .query({"rapidapi-key": process.env.RAPID_API_KEY ,"q": query})
+            .query({"rapidapi-key": "d347549ae9msh861b9e1b1538501p1cc382jsnaeb1894f49a9" ,"q": query})
             .then(response => {setData(response.body)})
             .catch(error => (console.log(error)))
             setQuery("")
