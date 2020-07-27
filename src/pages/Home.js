@@ -38,19 +38,21 @@ const Home = () => {
     
     return(
         <Base>
-            <div className="data-entry">
-                <input type="text" className="search-input" placeholder="Search" value={query} onChange={(e) => setQuery(e.target.value)} />
-                <button className="btn btn-info search-btn" onClick={onSubmit} disabled={valueCheck()}>Search</button>
+        <div id="main">
+            <div className="container">
+                <div className="data-entry">
+                    <input type="text" className="search-input" placeholder="Search" value={query} onChange={(e) => setQuery(e.target.value)} />
+                    <button className="btn search-btn" onClick={onSubmit} disabled={valueCheck()}><i class="fas fa-search"></i></button>
+                </div>
+                <div className="record">
+                    <h2>{data.name}</h2><sup>{data.sys.country}</sup>
+                    <p>{data.main.temp}</p>   
+                    <p>{data.main.humidity}</p>  
+                    <p>{data.weather.map(weather => <p className="text-white">{weather.main}</p>)}</p>
+                </div>   
             </div>
-            <div className="record">
-                <h2 className="text-white name">{data.name}</h2><sup className="badge badge-danger country">{data.sys.country}</sup>
-                <p className="badge badge-success text-white">Temperature: {data.main.temp}</p>   
-                <p className="text-white badge badge-success">Humidity: {data.main.humidity}</p>  
-                <p className="text-white badge badge-success">Weather: {data.weather.map(weather => <p className="text-white">{weather.main}</p>)}</p>
-            </div>
-                
+        </div>                
         </Base>
-        
     )
 }
 
