@@ -26,6 +26,12 @@ const Home = () => {
             }
         }
 
+        const dataCheck = () => {
+            if(data.main.temp !== ''){
+                return true;
+            }
+        }
+
         const onSubmit = event => {
             event.preventDefault();
             unirest.get("https://community-open-weather-map.p.rapidapi.com/weather")
@@ -44,12 +50,20 @@ const Home = () => {
                     <input type="text" className="search-input" placeholder="Search" value={query} onChange={(e) => setQuery(e.target.value)} />
                     <button className="btn search-btn" onClick={onSubmit} disabled={valueCheck()}><i class="fas fa-search"></i></button>
                 </div>
-                <div className="record">
-                    <h2>{data.name}</h2><sup>{data.sys.country}</sup>
-                    <p>{data.main.temp}</p>   
-                    <p>{data.main.humidity}</p>  
-                    <p>{data.weather.map(weather => <p className="text-white">{weather.main}</p>)}</p>
-                </div>   
+                {dataCheck() && (
+                    <div className="record">
+                        <h2>{data.name}<sup className="badge-danger sup">{data.sys.country}</sup></h2>
+                        <div className="data">
+                            <p className="badge-success">Temperature</p>
+                            <h6>{data.main.temp}&deg;F</h6>  
+                            <p className="badge-success">Humidity</p>
+                            <h6>{data.main.humidity}%</h6>
+                            <p className="badge-success">Weather</p>
+                            <h6>{data.weather.map(weather => <p>{weather.main}</p>)}</h6>
+                        </div>
+                    </div>
+                )}
+                   
             </div>
         </div>                
         </Base>

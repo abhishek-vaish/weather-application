@@ -13,6 +13,14 @@ body{
   background-repeat: no-repeat;
 }
 
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
 .cover{
   height: 100vh;
   display: flex;
@@ -27,9 +35,11 @@ body{
   width: 100%;
   background-color: white;
   border-radius: 10px;
-  padding: 100px;
-  
-  
+  padding: 60px;
+}
+
+.badge-success{
+  border-radius: 2px;
 }
 
 .search-input{
@@ -66,6 +76,22 @@ body{
   margin: 0;
 }
 
+.record{
+  background-color: white;
+  width: 50%;
+  margin-top: 30px;
+  border: 2px black solid;
+  padding: 20px 20px 10px 20px;
+  border-radius: 5px;
+}
+
+.record .sup{
+  border-radius: 2px;
+  margin-left: 5px;
+  padding: 0px 3px 0px 3px;
+}
+
+
 @media screen and (max-width:414px){
   body{
     background-image: linear-gradient(180deg, rgb(0,0,0,0.1), rgb(0,0,0,0.1)), url("images/mobile.jpg");
@@ -78,9 +104,13 @@ body{
     margin-bottom: 5px;
   }
 
+  .record{
+    width: 80%;
+    padding: 10px 10px 5px 10px;
+  }
   
   .App-header{
-    padding: 30px;
+    padding: 20px;
   }
 
   .App-header h1{
