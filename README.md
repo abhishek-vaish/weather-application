@@ -1,4 +1,4 @@
-#Weather Application
+# Weather Application
 Weather Application is a API based application used to check weather forecast of and city or country and the best part of this, it is a Progressive Web Application supporitive. So you can save it in your device as a Application.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
