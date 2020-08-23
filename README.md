@@ -2,14 +2,11 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c4f880d5-aa43-45f5-884c-4a7b071b548d/deploy-status)](https://app.netlify.com/sites/modest-morse-43d5e8/deploys)<br>
 Weather Application is a API based application used to check weather forecast of any city or country and the best part of this, it is a Progressive Web Application supporitive. So you can save it in your device as a Application.
 
-## Technology Used
+## Technology Used :globe_with_meridians:
 * ReactJS
 * HTML
 * CSS
-* RapidAPI
-
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* Rapid API
 
 ## Available Scripts
 
